@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var uri1 = location.search.substr(1).split("&");
+        var uri2 = decodeURIComponent(uri1);
+        var uri3 = uri2.split(",");
+        var uri4 = [];
+        var tmp = [];
+        for (var i=0;i<uri3.length;i++){
+            tmp = String(uri3[i]).split("=");
+            for (var j=0;j<tmp.length;j++){
+                uri4.push(tmp[j]);
+            }
+        }
+/*
+        for (var i=0;i<uri4.length;i++){
+            document.write(uri4[i]);        
+            document.write("<br>");
+        }
+        */
+        var fileName = uri4[7].split(".")[0];
+        var fileExt =  uri4[7].split(".")[1];
+
+
+        document.write("id:" + uri4[1]);
+        document.write("<br>");
+        document.write("name:" + uri4[3]);   
+        document.write("<br>");
+        document.write("sex:" + uri4[4]);
+        document.write("<br>");
+        document.write("fileName:" + fileName);
+        document.write("<br>");
+        document.write("fileExt:" + fileExt);
+    </script>
+</body>
+</html>

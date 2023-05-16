@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Document</title>
+</head>
+<body>
+ 
+    <script>
+        // function show(){
+            // document.getElementById("write").innerHTML = window.location.search;
+        // }
+        // document.write(location.search);
+        // var searchURL = window.location.search;
+        // searchURL = searchURL.substring(1,searchURL.length);
+        // var targetPageId1 = searchURL.split("&")[0].split("=")[1];
+        // var targetPageId2 = searchURL.split("&")[0].split("=")[1];
+        // document.write(location.search);
+        // document.write(targetPageId1);
+        // document.write(targetPageId2);
+        
+        // var searchURL = window.location.search;
+        // document.write(searchURL);
+
+        // for (var i=0;i<aa.length;i++){
+            // document.write(aa[i]);
+            // document.write("<br>");
+        // }
+        // var bb = location.search;
+        // document.write(bb);
+        var aa = location.search.substr(1).split("&");
+        var bb = decodeURIComponent(aa);
+        var cc = bb.split(",");
+        var dd = [];
+        for (var i=0;i<cc.length;i++){
+            dd.push(cc[i].split("="));
+        }
+
+        var ff = [];
+        var ee = [];
+        for (var i=0;i<dd.length;i++){
+            ff = String(dd[i]).split(",");
+            for (var j=0;j<ff.length;j++){
+                ee.push(ff[j]);
+            }
+        }
+        document.write("sid:" + ee[1]);
+        document.write("<br>");
+        document.write("username:" + ee[3]);
+        document.write("<br>");
+        document.write("sex:" + ee[4]);
+
+
+
+
+    </script>
+</body>
+</html>
